@@ -163,10 +163,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [_LOWER] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              KC_CAPS,  KC_NUM,   KC_UP,    KC_EQL,   KC_LCBR,   KC_RCBR,  KC_P7,    KC_P8,    KC_P9,    KC_PPLS,
-              KC_QUOT,  KC_LEFT,  _______,  KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_P4,    KC_P5,    KC_P6,    KC_MINS,  
-    SNAP,     KC_END,   KC_PGUP,  KC_DOWNC(KC_S),  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_P1,    KC_P2,    KC_P3,    KC_PAST,  _______,
-                                  _______,  _______,  _______,   _______,  ADJUST,   KC_P0
+              SHAREX,   KC_PGUP,  KC_LGUI,  KC_PGDN,  KC_LCBR,   KC_RCBR,  KC_P7,    KC_P8,    KC_P9,    KC_MINS,
+              SNAP,     KC_LEFT,  KC_UP,    KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_P4,    KC_P5,    KC_P6,    KC_PPLS,  
+    RECGIF,   RECV,     KC_HOME,  KC_DOWN,  KC_END,   KC_LPRN,   KC_RPRN,  KC_P1,    KC_P2,    KC_P3,    KC_PAST,  KC_EQL,
+                                  _______,  _______,  _______,   KC_DEL,   ADJUST,   KC_P0
  ),
  /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
@@ -186,11 +186,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [_RAISE] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,   KC_CIRC,  KC_AMPR,  RALT(KC_U),RALT(KC_3),KC_BSLS,
-            RALT(KC_A),RALT(KC_F),RALT(KC_S),RALT(KC_G),XXXXXXX, XXXXXXX,LSFT(RALT(KC_4)),RALT(KC_5), RALT(KC_4),  RALT(KC_O), 
-    KC_LSFT, LSFT(KC_GRV),KC_TILD, RALT(KC_C),XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  DM_REC1,  DM_RSTP,  KC_RSFT, 
-                                  _______,   ADJUST,   _______,   _______,  _______,  _______
+              KC_AT,    KC_HASH,  KC_DLR,   KC_SLSH,  KC_LABK,   KC_RABK,  KC_BSLS,  RALT(KC_U),KC_UNDS,  KC_MINS,
+              RALT(KC_A),KC_RALT, RALT(KC_S),KC_AMPR, KC_DQUO,   KC_QUOT,  KC_EXLM,  RALT(KC_5),RALT(KC_4),RALT(KC_O),
+    KC_LSFT,  KC_GRV,   KC_CIRC,  KC_PERC,  KC_PIPE,  KC_QUOT,   KC_GRV,   KC_QUES,  XXXXXXX,  XXXXXXX,  KC_SCLN,  KC_RSFT,
+                                  _______,  ADJUST,   KC_SPC,    _______,  _______,  _______
  ),
+
  /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
    
