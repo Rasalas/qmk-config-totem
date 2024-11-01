@@ -44,7 +44,10 @@ enum custom_keycodes {
     ADJUST,
     OS_SWAP,
     MAKE_H,
-    SNAP
+    SNAP,
+    SHAREX,
+    RECV,
+    RECGIF,
 };
 
 // ┌─────────────────────────────────────────────────┐
@@ -104,17 +107,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │    A    │    S    │    D    │    F    │    G    ││    H    │    J    │    K    │    L    │    ;    │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │    Q    │    Z    │    X    │    C    │    V    │    B    ││    N    │    M    │    ,    │    .    │    /    │    P    │
+   │ LSHIFT  │    Z    │    X    │    C    │    V    │    B    ││    N    │    M    │    ,    │    .    │    /    │  RSHIFT │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │  CTRL   │  LOWER  │  SPACE  ││  ENTER  │  RAISE  │  BSPC   │  
+                                 │  CTRL   │  LOWER  │  SPACE  ││   BSPC  │  RAISE  │  ENTER  │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘*/ 
 
    [_QWERTY] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,  
               GUI_A,    ALT_S,    CTL_D,    SHT_F,    KC_G,      KC_H,     SHT_J,    CTL_K,    ALT_L,    GUI_S,    
-    KC_Q,     KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_P,
-                                  KC_DEL,   LOWER,    KC_SPC,    KC_ENT,   RAISE,    KC_BSPC
+    KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,
+                                  KC_LCTL,  LOWER,    KC_SPC,    KC_BSPC,  RAISE,    KC_ENT
  ),
 
 /*
@@ -125,21 +128,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ c o l e m a k                                   │      ╭╮╭╮╭╮╭╮
    └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
              ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-     ╌┄┈┈───═╡    Q    │    W    │    F    │    P    │    G    ││    J    │    L    │    U    │    Y    │    ;    │   
+     ╌┄┈┈───═╡    Q    │    W    │    F    │    P    │    G    ││    J    │    L    │    U    │    Y    │    ~    │   
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │    A    │    R    │    S    │    T    │    D    ││    H    │    N    │    E    │    I    │    O    │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │    Q    │    Z    │    X    │    C    │    V    │    B    ││    K    │    M    │    ,    │    .    │    /    │    ;    │
+   │ LSHIFT  │    Z    │    X    │    C    │    V    │    B    ││    K    │    M    │    ,    │    .    │    :    │  RSHIFT │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │   DEL   │  LOWER  │  SPACE  ││  ENTER  │  RAISE  │  BSPC   │  
+                                 │  CTRL   │  LOWER  │  SPACE  ││   BSPC  │  RAISE  │  ENTER  │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘*/ 
 
    [_COLEMAK] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,      KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,  
+              KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,      KC_J,     KC_L,     KC_U,     KC_Y,     KC_TILD,  
               GUI_A,    ALT_R,    CTL_S,    SHT_T,    KC_D,      KC_H,     SHT_N,    CTL_E,    ALT_I,    GUI_O,  
-    KC_Q,     KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_K,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_SCLN,
-                                  KC_DEL,   LOWER,    KC_SPC,    KC_ENT,   RAISE,    KC_BSPC
+    KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_K,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,
+                                  KC_LCTL,  LOWER,    KC_SPC,    KC_BSPC,  RAISE,    KC_ENT
  ),
 
  /*
@@ -149,20 +152,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ l o w e r                                       │      ╭╮╭╮╭╮╭╮
    └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
              ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-     ╌┄┈┈───═╡ CAPSLCK │ NUMLCK  │    ↑    │    =    │    {    ││    }    │    7    │    8    │    9    │    +    │   
+     ╌┄┈┈───═╡ SHAREX  │   PG↑   │   WIN   │   PG↓   │    {    ││    }    │    7    │    8    │    9    │    -    │   
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
-             │  HOME   │    ←    │    ↓    │    →    │    [    ││    ]    │    4    │    5    │    6    │    -    │    
+             │  SNAP   │    ←    │    ↑    │    →    │    [    ││    ]    │    4    │    5    │    6    │    +    │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │ SCRNSHT │   END   │   PG↑   │  SAVE   │   PG↓   │    (    ││    )    │    1    │    2    │    3    │    *    │    ▼    │
+   │ RECGIF  │  RECV   │   HOME  │    ↓    │   END   │    (    ││    )    │    1    │    2    │    3    │    *    │    =    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │    ▼    │    ▼    │    ▼    ││    ▼    │ ADJUST  │    0    │  
+                                 │    ▼    │   [▼]   │    ▼    ││   DEL   │ ADJUST  │    0    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
 
    [_LOWER] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_CAPS,  KC_NUM,   KC_UP,    KC_EQL,   KC_LCBR,   KC_RCBR,  KC_P7,    KC_P8,    KC_P9,    KC_PPLS,
-              KC_QUOT,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_P4,    KC_P5,    KC_P6,    KC_MINS,  
-    SNAP,     KC_END,   KC_PGUP,  C(KC_S),  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_P1,    KC_P2,    KC_P3,    KC_PAST,  _______,
+              KC_QUOT,  KC_LEFT,  _______,  KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_P4,    KC_P5,    KC_P6,    KC_MINS,  
+    SNAP,     KC_END,   KC_PGUP,  KC_DOWNC(KC_S),  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_P1,    KC_P2,    KC_P3,    KC_PAST,  _______,
                                   _______,  _______,  _______,   _______,  ADJUST,   KC_P0
  ),
  /*
@@ -172,20 +175,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ r a i s e                                       │      ╭╮╭╮╭╮╭╮
    └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
              ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-     ╌┄┈┈───═╡    !    │    @    │    #    │    $    │    %    ││    ^    │    &    │    Ü    │    °    │    /    │   
+     ╌┄┈┈───═╡    @    │    #    │    $    │    /    │    <    ││    >    │    \    │    Ü    │    ¥    │    _    │   
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
-             │    Ä    │    è    │    SZ   │    é    │         ││         │    ¥    │    €    │    £    │    Ö    │
+             │    Ä    │    °    │    ß    │    &    │    "    ││    '    │    !    │    €    │    £    │    Ö    │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │    `    │    ~    │   CUE   │         │         ││         │         │         │ DM REC1 │ DM STOP │ DM PLY1 │
+   │ LSHIFT  │    §    │    ^    │    %    │    |    │    ´    ││    `    │    ?    │         │         │    ;    │  RSHIFT │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │  GIPHY  │ ADJUST  │    ▼    ││    ▼    │    ▼    │    ▼    │  
+                                 │         │ ADJUST  │  SPACE  ││    ▼    │   [▼]   │    ▼    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
 
    [_RAISE] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,   KC_CIRC,  KC_AMPR,  RALT(KC_U),RALT(KC_3),KC_BSLS,
             RALT(KC_A),RALT(KC_F),RALT(KC_S),RALT(KC_G),XXXXXXX, XXXXXXX,LSFT(RALT(KC_4)),RALT(KC_5), RALT(KC_4),  RALT(KC_O), 
-    XXXXXXX, LSFT(KC_GRV),KC_TILD, RALT(KC_C),XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  DM_REC1,  DM_RSTP,  DM_PLY1, 
+    KC_LSFT, LSFT(KC_GRV),KC_TILD, RALT(KC_C),XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  DM_REC1,  DM_RSTP,  KC_RSFT, 
                                   _______,   ADJUST,   _______,   _______,  _______,  _______
  ),
  /*
@@ -195,13 +198,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ a d j u s t                                     │      ╭╮╭╮╭╮╭╮
    └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
              ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-     ╌┄┈┈───═╡  RESET  │         │         │         │         ││         │   F7    │   F8    │   F9    │   F12   │   
+     ╌┄┈┈───═╡  RESET  │         │         │         │         ││         │   F1    │   F2    │   F3    │   F4    │   
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
-             │ DEBUG   │ QWERTY  │         │         │         ││         │   F4    │   F5    │   F6    │   F11   │   
+             │ DEBUG   │ QWERTY  │         │         │         ││         │   F5    │   F6    │   F7    │   F8    │   
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │  MAKE   │ OS SWAP │ COLEMAK │         │         │         ││         │   F1    │   F2    │   F3    │   F10   │   F13   │
+   │  MAKE   │ OS SWAP │ COLEMAK │         │         │         ││         │   F9    │   F10   │   F11   │   F12   │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │  
+                                 │    ▼    │   [▼]   │    ▼    ││    ▼    │   [▼]   │    ▼    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
 
    [_ADJUST] = LAYOUT(
@@ -283,7 +286,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case MAKE_H:
           if (record->event.pressed) {
-            SEND_STRING ("qmk compile -kb totem -km default");
+            SEND_STRING ("qmk compile -kb totem -km tbuck");
             tap_code(KC_ENTER); 
           } 
           break;
@@ -293,14 +296,41 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // └─────────────────────────────────────────────────┘
 
       case SNAP:
-          if (record->event.pressed) {
-            if (keymap_config.swap_lctl_lgui) {
-              SEND_STRING(SS_LSFT(SS_LCMD(SS_LCTL("4"))));  //MAC           
-            } else {
-              SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
-            }
+        if (record->event.pressed) {
+          if (keymap_config.swap_lctl_lgui) {
+            SEND_STRING(SS_LSFT(SS_LCMD(SS_LCTL("4"))));  //MAC           
+          } else {
+            SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
           }
-          break;
+        }
+        break;
+      case SHAREX:
+        if (record->event.pressed) {
+          if (keymap_config.swap_lctl_lgui) {
+              SEND_STRING(SS_LCMD(SS_LSFT("3")));  // MAC
+          } else {
+              SEND_STRING(SS_LCTL(SS_LSFT("3")));  // WIN
+          }
+        }
+        break;
+      case RECV:
+        if (record->event.pressed) {
+          if (keymap_config.swap_lctl_lgui) {
+              SEND_STRING(SS_LCMD(SS_LSFT("4")));  // MAC
+          } else {
+              SEND_STRING(SS_LCTL(SS_LSFT("4")));  // WIN
+          }
+        }
+        break;
+      case RECGIF:
+        if (record->event.pressed) {
+          if (keymap_config.swap_lctl_lgui) {
+              SEND_STRING(SS_LCMD(SS_LSFT("5")));  // MAC
+          } else {
+              SEND_STRING(SS_LCTL(SS_LSFT("5")));  // WIN
+          }
+        }
+        break;
     }
     return true;
 }
