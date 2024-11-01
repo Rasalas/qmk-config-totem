@@ -56,38 +56,37 @@ enum custom_keycodes {
 
 // LEFT HAND HOME ROW MODS QWERTY ├──────────────────┐
 
-#define GUI_A MT(MOD_LGUI, KC_A)
-#define ALT_S MT(MOD_LALT, KC_S)
-#define CTL_D MT(MOD_LCTL, KC_D)
-#define SHT_F MT(MOD_LSFT, KC_F)
+#define GUI_A MT(MOD_LGUI, KC_A)   // Tap: outputs 'a' / Hold: GUI (Windows/Cmd)
+#define ALT_S MT(MOD_LALT, KC_S)   // Tap: outputs 's' / Hold: Alt
+#define CTL_D MT(MOD_LCTL, KC_D)   // Tap: outputs 'd' / Hold: Control
+#define SHT_F MT(MOD_LSFT, KC_F)   // Tap: outputs 'f' / Hold: Shift
 
 // RIGHT HAND HOME ROW MODS QWERTY ├─────────────────┐
 
-#define SHT_J MT(MOD_RSFT, KC_J)
-#define CTL_K MT(MOD_LCTL, KC_K)
-#define ALT_L MT(MOD_LALT, KC_L)
-#define GUI_S MT(MOD_LGUI, KC_SCLN)
+#define SHT_J MT(MOD_RSFT, KC_J)    // Tap: outputs 'j' / Hold: Shift
+#define CTL_K MT(MOD_LCTL, KC_K)    // Tap: outputs 'k' / Hold: Control
+#define ALT_L MT(MOD_LALT, KC_L)    // Tap: outputs 'l' / Hold: Alt
+#define GUI_S MT(MOD_LGUI, KC_SCLN) // Tap: outputs ';' / Hold: GUI
 
 
 // LEFT HAND HOME ROW MODS COLEMAK ├─────────────────┐
 
-#define GUI_A MT(MOD_LGUI, KC_A)
-#define ALT_R MT(MOD_LALT, KC_R)
-#define CTL_S MT(MOD_LCTL, KC_S)
-#define SHT_T MT(MOD_LSFT, KC_T)
+#define GUI_A MT(MOD_LGUI, KC_A)   // Tap: outputs 'a' / Hold: GUI (Windows/Cmd)
+#define ALT_R MT(MOD_LALT, KC_R)   // Tap: outputs 'r' / Hold: Alt
+#define CTL_S MT(MOD_LCTL, KC_S)   // Tap: outputs 's' / Hold: Control
+#define SHT_T MT(MOD_LSFT, KC_T)   // Tap: outputs 't' / Hold: Shift
 
 // RIGHT HAND HOME ROW MODS COLEMAK ├────────────────┐
 
-#define SHT_N MT(MOD_RSFT, KC_N)
-#define CTL_E MT(MOD_LCTL, KC_E)
-#define ALT_I MT(MOD_LALT, KC_I)
-#define GUI_O MT(MOD_LGUI, KC_O)
+#define SHT_N MT(MOD_RSFT, KC_N)   // Tap: outputs 'n' / Hold: Shift
+#define CTL_E MT(MOD_LCTL, KC_E)   // Tap: outputs 'e' / Hold: Control
+#define ALT_I MT(MOD_LALT, KC_I)   // Tap: outputs 'i' / Hold: Alt
+#define GUI_O MT(MOD_LGUI, KC_O)   // Tap: outputs 'o' / Hold: GUI (Windows/Cmd)
 
 
 
-
-#define LOWER LT(_LOWER, KC_TAB)
-#define RAISE LT(_RAISE, KC_ESC)
+#define LOWER LT(_LOWER, KC_TAB)   // Tap: outputs Tab / Layer: Lower
+#define RAISE LT(_RAISE, KC_ESC)   // Tap: outputs Escape / Layer: Raise
 #define ADJUST MO(_ADJUST)
 
 
@@ -139,9 +138,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [_COLEMAK] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,      KC_J,     KC_L,     KC_U,     KC_Y,     KC_TILD,  
+              KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,      KC_J,     KC_L,     KC_U,     KC_Z,     KC_TILD,  
               GUI_A,    ALT_R,    CTL_S,    SHT_T,    KC_D,      KC_H,     SHT_N,    CTL_E,    ALT_I,    GUI_O,  
-    KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_K,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,
+    KC_LSFT,  KC_Y,     KC_X,     KC_C,     KC_V,     KC_B,      KC_K,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,
                                   KC_LCTL,  LOWER,    KC_SPC,    KC_BSPC,  RAISE,    KC_ENT
  ),
 
@@ -218,6 +217,42 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 
+   ┌─────────────────────────────────────────────────┐
+   │ reality (colemak)                               │      ╭╮╭╮╭╮╭╮
+   └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
+             ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
+     ╌┄┈┈───═╡    q    │    w    │    f    │    p    │    g    ││    j    │    l    │    u    │    z    │    °    │   
+             ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
+             │    a    │    r    │    s    │    t    │    d    ││    h    │    n    │    e    │    i    │    o    │    
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │         │    y    │    x    │    c    │    v    │    b    ││    k    │    m    │    ,    │    .    │    -    │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │    y    │    x    │    c    ││    v    │    b    │    k    │  
+                                 └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ 
+   ┌─────────────────────────────────────────────────┐
+   │ reality (lower)                                 │      ╭╮╭╮╭╮╭╮
+   └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
+             ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
+     ╌┄┈┈───═╡  SHAREX │   PG↑   │   WIN   │   PG↓   │    Ü    ││    *    │    7    │    8    │    9    │    ß    │   
+             ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
+             │   SNAP  │    ←    │    ↑    │    →    │    ü    ││    +    │    4    │    5    │    6    │    +    │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │ RECGIF  │   RECV  │   HOME  │    ↓    │   END   │     )   ││    =    │    1    │    2    │    3    │    *    │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │    ▼    │   [▼]   │    ▼    ││   DEL   │ ADJUST  │    0    │    
+                                 └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ 
+   ┌─────────────────────────────────────────────────┐
+   │ reality (raise)                                 │      ╭╮╭╮╭╮╭╮
+   └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
+             ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
+     ╌┄┈┈───═╡    "    │     §   │    $    │    -    │    ;    ││    :    │    #    │         │    ?    │    ß    │   
+             ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
+             │         │         │         │    /    │    Ä    ││    ä    │    !    │         │         │         │    
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │         │         │    &    │    %    │    '    │    ä    ││    ^    │    _    │         │         │    ö    │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │         │ ADJUST  │  SPACE  ││    ▼    │   [▼]   │    ▼    │   
+                                 └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ 
    ┌─────────────────────────────────────────────────┐
    │ t e m p l a t e                                 │      ╭╮╭╮╭╮╭╮
    └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
